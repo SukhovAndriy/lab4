@@ -1,0 +1,43 @@
+@startuml
+class lab4.Circle {
+- PolarPoint center
++ void draw(double,double)
+}
+
+
+class lab4.Point {
+- int x
+- int y
++ void setX(int)
++ void setY(int)
++ int getX()
++ int getY()
+}
+
+
+interface lab4.DecartPoint {
+~ void setX(int)
+~ void setY(int)
+~ int getX()
+~ int getY()
+}
+
+
+
+interface lab4.PolarPoint {
+~ void setRo(double)
+~ void setPhi(double)
+}
+
+class lab4.Adapter {
+- DecartPoint point
++ void setRo(double)
++ void setPhi(double)
+}
+
+
+
+
+lab4.DecartPoint <|.. lab4.Point
+lab4.PolarPoint <|.. lab4.Adapter
+@enduml
